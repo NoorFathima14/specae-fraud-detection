@@ -53,6 +53,51 @@ python scripts/run_elliptic.py
 
 ---
 
+## Streamlit Dashboard
+
+Interactive web application for fraud detection:
+
+```bash
+streamlit run dashboard.py
+```
+
+### Features
+- **Data Overview**: Explore Elliptic dataset statistics
+- **Model Setup**: Train new models or load pre-trained ones
+- **Fraud Detection**: Set thresholds and flag suspicious transactions
+- **Results**: View performance metrics and visualizations
+
+---
+
+## Deployment
+
+### Streamlit Cloud (Recommended)
+
+1. **Push to GitHub** (already done)
+2. **Go to [share.streamlit.io](https://share.streamlit.io)**
+3. **Connect your GitHub account**
+4. **Select repository**: `NoorFathima14/specae-fraud-detection`
+5. **Set main file path**: `dashboard.py`
+6. **Click Deploy**
+
+### Other Options
+
+#### Heroku
+```bash
+# Create requirements.txt (already done)
+# Create Procfile
+echo "web: streamlit run dashboard.py --server.port $PORT --server.headless true" > Procfile
+# Deploy via Heroku CLI or GitHub integration
+```
+
+#### Local Deployment
+```bash
+pip install -r requirements.txt
+streamlit run dashboard.py
+```
+
+---
+
 ## Team
 
 | Member | Responsibilities |
