@@ -119,7 +119,10 @@ def main():
         alpha     = args.alpha,
         log_every = max(1, args.epochs // 20),
     )
-
+    # Save the trained model
+    model_path = os.path.join(args.outdir, "model.pth")
+    torch.save(model.state_dict(), model_path)
+    print(f"Model saved to {model_path}")
     # ── 4. Anomaly scoring (Noor's function) ──────────────────
     print("\n[4/4] Computing anomaly scores …")
     scores_tensor = compute_anomaly_scores(model, X, A_norm, alpha=args.alpha)

@@ -34,9 +34,10 @@ def plot_score_distribution(anomaly_scores: np.ndarray,
     ax.legend(fontsize=11)
     ax.grid(alpha=0.3)
     plt.tight_layout()
-    plt.savefig(save_path, dpi=150)
-    plt.close()
-    print(f"[viz] Score distribution → {save_path}")
+    if save_path is not None:
+        plt.savefig(save_path, dpi=150)
+        print(f"[viz] Score distribution → {save_path}")
+    return fig
 
 
 # ── 2. ROC curve ──────────────────────────────────────────────────────
@@ -55,9 +56,10 @@ def plot_roc_curve(y_true: np.ndarray, y_score: np.ndarray,
     ax.legend(fontsize=11)
     ax.grid(alpha=0.3)
     plt.tight_layout()
-    plt.savefig(save_path, dpi=150)
-    plt.close()
-    print(f"[viz] ROC curve → {save_path}")
+    if save_path is not None:
+        plt.savefig(save_path, dpi=150)
+        print(f"[viz] ROC curve → {save_path}")
+    return fig
 
 
 # ── 3. Precision-Recall curve ─────────────────────────────────────────
@@ -79,9 +81,10 @@ def plot_precision_recall_curve(y_true: np.ndarray, y_score: np.ndarray,
     ax.set_xlim([0, 1]); ax.set_ylim([0, 1.05])
     ax.grid(alpha=0.3)
     plt.tight_layout()
-    plt.savefig(save_path, dpi=150)
-    plt.close()
-    print(f"[viz] PR curve → {save_path}")
+    if save_path is not None:
+        plt.savefig(save_path, dpi=150)
+        print(f"[viz] PR curve → {save_path}")
+    return fig
 
 
 # ── 4. Fraud graph sample ─────────────────────────────────────────────
@@ -143,6 +146,7 @@ def plot_fraud_graph_sample(A: sp.csr_matrix,
         "(node size ∝ anomaly score)", fontsize=13)
     ax.axis("off")
     plt.tight_layout()
-    plt.savefig(save_path, dpi=150)
-    plt.close()
-    print(f"[viz] Graph sample → {save_path}")
+    if save_path is not None:
+        plt.savefig(save_path, dpi=150)
+        print(f"[viz] Graph sample → {save_path}")
+    return fig
