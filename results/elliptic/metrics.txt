@@ -1,0 +1,10 @@
+ROC-AUC: 0.9525
+Average-Precision: 0.6015
+Precision: 0.8182
+Recall: 0.5
+F1-Score: 0.6207
+Threshold: -0.133363
+TP: 9
+FP: 2
+TN: 952
+FN: 9
