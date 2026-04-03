@@ -28,3 +28,4 @@ Thumbs.db
 
 #Dataset
 data/
+results/elliptic/model.pth
